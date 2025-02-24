@@ -27,6 +27,7 @@ void deletefromPos(int pos){
     printf("Deleted %d at %d",del,pos);
 }
 
+
 int main(){
 int choice,val,pos;
     while(1){
@@ -35,8 +36,8 @@ int choice,val,pos;
         printf(" 2. Insertion of Data at the Pos\n");
         printf(" 3. Deletion of Data at the Pos\n");
         printf(" 4. Display\n");
-        //printf(" 5. Search the Data Pos\n");
-        printf(" 5. Exit \n");
+        printf(" 5. Search the Data and Pos\n");
+        printf(" 6. Exit \n");
         printf("-------------------END-------------------\n");
         printf("Choose the option : ");
         scanf("%d",&choice);
@@ -72,9 +73,17 @@ int choice,val,pos;
                 break;
         case 4: display();
                 break;
-        case 5: exit(0);
+        case 5: printf("\nEnter the Data to Find : ");
+                scanf("%d",&val);
+                if(val && size){
+                    printf("Data %d found in Pos %d",val,arr[val]);
+                    break;
+                    }
+                break;
+                
+        case 6: exit(0);
         
-        default: printf("Wrong Choice");
+        default: printf("\nWrong Choice");
                  break;
           }
     }
